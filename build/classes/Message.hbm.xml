@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+          <hibernate-mapping>
+          <class name="com.cloud.domain.Message" table="message_table">
+          <id name="id">
+          <generator class="identity"></generator>
+          </id>
+          
+          <property name="message" column="message"></property>
+          <property name="groupIdList" column="group_id_list"></property>
+          <property name="status" column="status"></property>
+          </class>
+          
+          </hibernate-mapping>
