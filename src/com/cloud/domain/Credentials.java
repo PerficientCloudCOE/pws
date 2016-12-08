@@ -2,7 +2,7 @@ package com.cloud.domain;
 
 public class Credentials {
 	private int id;
-	private String userId;
+	private int userId;
 	private String password;
 	public int getId() {
 		return id;
@@ -10,10 +10,10 @@ public class Credentials {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 	public String getPassword() {

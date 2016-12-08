@@ -34,6 +34,7 @@
 				<value>Credentials.hbm.xml</value>
 				<value>Group.hbm.xml</value>
 				<value>Message.hbm.xml</value>
+				<value>Member.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -61,6 +62,11 @@
     <property name="template" ref="template"></property> 
     </bean>
     
+    <bean id="memberDao" class="com.cloud.dao.MemberDAO"> 
+    <property name="sessionFactory" ref="sessionFactory"></property>  
+    <property name="template" ref="template"></property> 
+    </bean>
+    
     <bean id="loginCntrl" name="/login.do" class="com.cloud.cntrl.LoginCntrl">
     <property name="userDao"> <ref bean="userDao"/></property>
     <property name="groupDao"> <ref bean="groupDao"/></property>
@@ -74,4 +80,8 @@
     <property name="messageDao"> <ref bean="messageDao"/></property>
     </bean> 
 	
+    <bean id="addMemberCntrl" name="/addMember.do" class="com.cloud.cntrl.MemberCntrl">
+    <property name="memberDao"> <ref bean="memberDao"/></property>
+    </bean>
+    
 	</beans>

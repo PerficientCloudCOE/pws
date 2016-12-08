@@ -12,6 +12,7 @@
 ${msg.msg}
 <form action="createMsg.do" method="post">
 <table>
+<c:set var="list" value="${msg.listGroups}" scope="session" />
 <a href="AddMemberPage.jsp">Add member</a>
 <th>Select the recipient groups</th>
 <c:if test="${!empty msg.listGroups}">
