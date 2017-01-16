@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+          <hibernate-mapping>
+          <class name="com.cloud.domain.UserAccess" table="credentials_table">
+          <id name="id" column="id" type="java.lang.Integer">
+          <generator class="foreign"><param name="property">register</param></generator>
+          </id>
+          <one-to-one name="register" class="com.cloud.domain.Register"
+			constrained="true"></one-to-one>
+          <property name="userName" column="userId" type="java.lang.String"></property>
+          <property name="password1" column="password" type="java.lang.String"></property>
+          
+          </class>
+
+          </hibernate-mapping>
