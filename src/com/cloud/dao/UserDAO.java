@@ -10,6 +10,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import com.cloud.domain.Credentials;
 import com.cloud.domain.User;
+import com.cloud.domain.UserAccess;
 
 public class UserDAO {
 //	HibernateTemplate template;
@@ -26,9 +27,9 @@ public class UserDAO {
 	public Object findUser(String userName, String password) {
 		int userID = findUserID(userName);
 		Session session = sessionFactory.openSession();
-		Criteria criteria = session.createCriteria(Credentials.class);
+		Criteria criteria = session.createCriteria(UserAccess.class);
 		criteria.add(Restrictions.eq("userId", userID));
-		criteria.add(Restrictions.eq("password", password));
+		criteria.add(Restrictions.eq("password1", password));
 		Object userList = criteria.list();
 		session.close();
 		return userList;
@@ -48,5 +49,21 @@ public class UserDAO {
 			}
 		}
 		return userId;
+	}
+
+	public String getUserMailId(String userName) {
+		Session session = sessionFactory.openSession();
+		Criteria criteria = session.createCriteria(User.class);
+		criteria.add(Restrictions.eq("userId", userName));
+		List userList = criteria.list();
+		session.close();
+		String userMailId = "";
+		if(userList.size()>0){
+			for(Object us : userList){
+				User user = (User) us;
+				userMailId = user.getEmail();
+			}
+		}
+		return userMailId;
 	}
 }

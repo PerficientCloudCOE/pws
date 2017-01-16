@@ -10,6 +10,7 @@
           </id>
           
           <property name="groupName" column="groupname"></property>
+          <property name="groupValue" column="groupvalue"></property>
           </class>
           
           </hibernate-mapping>

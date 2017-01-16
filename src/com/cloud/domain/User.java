@@ -1,19 +1,26 @@
 package com.cloud.domain;
 
-import java.util.Date;
 
 public class User {
-	private int id;
+	private Integer id;
 	private String userId;
-	private String firstName;
-	private String lastName;
-	private String emailId;
+	private String firstname;
+	private String lastname;
+	private String email;
 	private String role;
-	private Date creationDate;
-	public int getId() {
+	private String date;	
+//	private UserAccess useraccess;
+//	
+//	public UserAccess getUseraccess() {
+//		return useraccess;
+//	}
+//	public void setUseraccess(UserAccess useraccess) {
+//		this.useraccess = useraccess;
+//	}
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getUserId() {
@@ -22,23 +29,23 @@ public class User {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public String getFirstName() {
-		return firstName;
+	public String getFirstname() {
+		return firstname;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
-	public String getLastName() {
-		return lastName;
+	public String getLastname() {
+		return lastname;
 	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
-	public String getEmailId() {
-		return emailId;
+	public String getEmail() {
+		return email;
 	}
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getRole() {
 		return role;
@@ -46,10 +53,10 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public Date getCreationDate() {
-		return creationDate;
+	public String getDate() {
+		return date;
 	}
-	public void setCreationDate(Date creationDate) {
-		this.creationDate = creationDate;
+	public void setDate(String date) {
+		this.date = date;
 	}
 }

@@ -35,6 +35,7 @@
 				<value>Group.hbm.xml</value>
 				<value>Message.hbm.xml</value>
 				<value>Member.hbm.xml</value>
+				<value>UserAccess.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -78,10 +79,20 @@
     
     <bean id="mergeMsgCntrl" name="/msgMerge.do" class="com.cloud.cntrl.MergeMsgCntrl">
     <property name="messageDao"> <ref bean="messageDao"/></property>
+    <property name="groupDao"> <ref bean="groupDao"/></property>
+    <property name="userDao"> <ref bean="userDao"/></property>
     </bean> 
 	
     <bean id="addMemberCntrl" name="/addMember.do" class="com.cloud.cntrl.MemberCntrl">
     <property name="memberDao"> <ref bean="memberDao"/></property>
+    <property name="groupDao"> <ref bean="groupDao"/></property>
     </bean>
     
+	<bean id="RegisterDao" class="com.cloud.dao.RegisterDAO">  
+    <property name="sessionFactory" ref="sessionFactory"></property> 
+    </bean> 
+    
+    <bean id="RegisterCntrl" name="/Register.do" class="com.cloud.cntrl.RegisterCntrl">
+    <property name="RegisterDao"> <ref bean="RegisterDao"/></property>
+    </bean>
 	</beans>

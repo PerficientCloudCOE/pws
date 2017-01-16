@@ -4,17 +4,20 @@
           "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
           <hibernate-mapping>
-          <class name="com.cloud.domain.User" table="user_table">
-          <id name="id">
-          <generator class="assigned"></generator>
+          <class name="com.cloud.domain.Register" table="user_table">
+          <id name="id" column="id" type="java.lang.Integer">
+          <generator class="native"></generator>
           </id>
+
           
-          <property name="userId" column="user_id"></property>
-          <property name="firstName" column="first_name"></property>
-          <property name="lastName" column="last_name"></property>
-          <property name="emailId" column="email_id"></property>
-          <property name="role" column="role"></property>
-          <property name="creationDate" column="creation_date"></property>
+          <property name="userName" column="user_id" type="java.lang.String"></property>
+          <property name="firstname" column="first_name" type="java.lang.String"></property>
+          <property name="lastname" column="last_name" type="java.lang.String"></property>
+          <property name="email" column="email_id" type="java.lang.String"></property>
+          <property name="role" column="role" type="java.lang.String"></property>
+          <property name="date" column="creation_date" type="java.lang.String"></property>
+          <one-to-one name="useraccess" class="com.cloud.domain.UserAccess"
+			cascade="save-update"></one-to-one>
           </class>
-          
+
           </hibernate-mapping>

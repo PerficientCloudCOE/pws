@@ -43,7 +43,7 @@
 <td><input type="text" name="mobNo" id="mobNo"/></td>
 </tr>
 <tr>
-<td><input type="submit" name="addMember" id="addMember"/>Add Member</td>
+<td><input type="submit" name="addMember" id="addMember" value="Add"/></td>
 </tr>
 </table>
 </form>
